@@ -3,11 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jr.pojo.Dept">
-    <select id="selectDept" resultType="com.jr.pojo.Dept">
+    <select id="selectDept" resultType="dept">
         select * from dept
     </select>
 
-    <insert id="addDept" parameterType="com.jr.pojo.Dept" useGeneratedKeys="true">
+    <insert id="addDept" parameterType="dept" useGeneratedKeys="true">
         insert into dept values(#{deptno},#{dname},#{loc})
     </insert>
 
@@ -15,11 +15,11 @@
         delete from dept where deptno=#{id}
     </delete>
 
-    <update id="updDept" parameterType="com.jr.pojo.Dept">
+    <update id="updDept" parameterType="dept">
         update dept set loc=#{loc},dname=#{dname} where deptno=#{deptno}
     </update>
 
-    <select id="selectOne" parameterType="int" resultType="com.jr.pojo.Dept">
+    <select id="selectOne" parameterType="int" resultType="dept">
         select * from dept where deptno=#{id}
     </select>
 

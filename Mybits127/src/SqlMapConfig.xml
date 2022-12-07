@@ -3,6 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--使用properties标签，加载外部属性文件-->
+    <properties resource="jdbc.properties"/>
+    <!--配置类型别名 将Mapper.xml里所有全局限定名换成别名使用-->
+    <typeAliases>
+        <!--<typeAlias type="com.jr.pojo.Dept" alias="dept"/>-->
+        <!--如果当前pojp里实体类没有使用注解，那么别名是类名首字母小写；
+            如果使用了注解的话，那么别名就是注解里的名字-->
+        <package name="com.jr.pojo"/>
+    </typeAliases>
+
+
+   <!-- 数据库环境配置-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
