@@ -6,4 +6,22 @@
     <select id="selectDept" resultType="com.jr.pojo.Dept">
         select * from dept
     </select>
+
+    <insert id="addDept" parameterType="com.jr.pojo.Dept" useGeneratedKeys="true">
+        insert into dept values(#{deptno},#{dname},#{loc})
+    </insert>
+
+    <delete id="delDept" parameterType="int">
+        delete from dept where deptno=#{id}
+    </delete>
+
+    <update id="updDept" parameterType="com.jr.pojo.Dept">
+        update dept set loc=#{loc},dname=#{dname} where deptno=#{deptno}
+    </update>
+
+    <select id="selectOne" parameterType="int" resultType="com.jr.pojo.Dept">
+        select * from dept where deptno=#{id}
+    </select>
+
+
 </mapper>
