@@ -47,7 +47,7 @@ public class MyTest {
 
         //3.调用session方法，处理返回值
         Dept dept=new Dept();
-        dept.setDeptno(60);
+        dept.setDeptno(100);
         dept.setDname("运维组");
         dept.setLoc("长春");
         int i= session.insert("addDept",dept);
